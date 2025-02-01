@@ -18,13 +18,15 @@ import kotlin.test.assertEquals
 
 class HomeViewModelTest {
 
+    private lateinit var repository: FakeCreditInfoRepository
     private lateinit var fakeApi: FakeClearScoreApiService
     private lateinit var viewModel: HomeViewModel
+    private val testDispatcher = StandardTestDispatcher()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @BeforeTest
     fun setup() {
-        Dispatchers.setMain(StandardTestDispatcher())
+        Dispatchers.setMain(testDispatcher)
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -79,7 +81,9 @@ class HomeViewModelTest {
         personaType = "CLASSIC"
         )
         fakeApi = FakeClearScoreApiService(RequestState.Success(creditInfo))
-        viewModel = HomeViewModel(fakeApi)
+        repository = FakeCreditInfoRepository(RequestState.Success(creditInfo))
+
+        viewModel = HomeViewModel(repository)
 
         viewModel.fetchNewCreditInfo()
 
@@ -89,8 +93,10 @@ class HomeViewModelTest {
     @Test
     fun `fetchNewCreditInfo should update state with error on failure`() = runTest {
 
-        fakeApi = FakeClearScoreApiService(RequestState.Error("Network Error"))
-        viewModel = HomeViewModel(fakeApi)
+        val errorMessage = "Network Error"
+        fakeApi = FakeClearScoreApiService(RequestState.Error(errorMessage))
+        repository = FakeCreditInfoRepository(RequestState.Error(errorMessage))
+        viewModel = HomeViewModel(repository)
 
         viewModel.fetchNewCreditInfo()
 

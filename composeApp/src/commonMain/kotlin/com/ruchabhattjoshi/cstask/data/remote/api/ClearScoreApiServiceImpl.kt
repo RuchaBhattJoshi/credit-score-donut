@@ -1,6 +1,5 @@
 package com.ruchabhattjoshi.cstask.data.remote.api
 
-import com.ruchabhattjoshi.cstask.domain.ClearScoreApiService
 import com.ruchabhattjoshi.cstask.domain.model.CreditInfo
 import com.ruchabhattjoshi.cstask.domain.RequestState
 import io.ktor.client.HttpClient
