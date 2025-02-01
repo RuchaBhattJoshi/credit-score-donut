@@ -1,7 +1,6 @@
 @file:OptIn(ExperimentalComposeLibrary::class)
 
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.implementation
 import org.gradle.kotlin.dsl.kotlin
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
@@ -14,7 +13,6 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinxSerialization)
-    alias(libs.plugins.realm.plugin)
 }
 
 kotlin {
@@ -69,7 +67,6 @@ kotlin {
             implementation(libs.multiplatform.settings.no.arg)
             implementation(libs.multiplatform.settings.coroutines)
 
-            implementation(libs.mongodb.realm)
             implementation(libs.kotlin.coroutines)
             implementation(libs.stately.common)
         }
@@ -81,6 +78,10 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
             implementation(libs.ktor.client.core)
+        }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.coroutines.test)
         }
 
     }
