@@ -1,4 +1,4 @@
-package com.ruchabhattjoshi.cstask.domain
+package com.ruchabhattjoshi.cstask.data.remote.api
 
 import com.ruchabhattjoshi.cstask.domain.model.CreditInfo
 import com.ruchabhattjoshi.cstask.domain.RequestState

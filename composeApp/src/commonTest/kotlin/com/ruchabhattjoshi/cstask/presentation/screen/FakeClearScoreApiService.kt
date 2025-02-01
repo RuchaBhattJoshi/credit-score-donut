@@ -1,6 +1,6 @@
 package com.ruchabhattjoshi.cstask.presentation.screen
 
-import com.ruchabhattjoshi.cstask.domain.ClearScoreApiService
+import com.ruchabhattjoshi.cstask.data.remote.api.ClearScoreApiService
 import com.ruchabhattjoshi.cstask.domain.RequestState
 import com.ruchabhattjoshi.cstask.domain.model.CreditInfo
 
