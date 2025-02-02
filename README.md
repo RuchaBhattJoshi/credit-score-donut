@@ -16,7 +16,6 @@ CSTask is a multiplatform mobile application built with Compose Multiplatform Mo
 *   Includes unit tests for the `HomeViewModel`.
 
 
-
 ## Architecture
 
 The CSTask app follows the principles of Clean Architecture, which divides the application into distinct layers:
@@ -58,3 +57,12 @@ Android:
 iOS:
 
 <img width="347" alt="Image" src="https://github.com/user-attachments/assets/e2606a12-41a3-4a60-9a58-bdb9babe357a" />
+
+
+## What I could achieve with time:
+
+• Add effective Unit/UI Testing.
+
+• Desktop support + Testcases
+
+• Local database 
