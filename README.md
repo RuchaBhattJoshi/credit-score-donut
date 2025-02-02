@@ -50,3 +50,11 @@ The CSTask app follows the principles of Clean Architecture, which divides the a
 * Kotlin Multiplatform plugin
 
 ## Screenshots
+
+Android:
+
+<img width="224" alt="Image" src="https://github.com/user-attachments/assets/15127b21-c88c-491b-8214-a014ca06231f" />
+
+iOS:
+
+<img width="347" alt="Image" src="https://github.com/user-attachments/assets/e2606a12-41a3-4a60-9a58-bdb9babe357a" />
