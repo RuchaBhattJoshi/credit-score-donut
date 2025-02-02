@@ -1,2 +1,52 @@
-# CSTask
-A Compose Multiplatform app that fetches and displays credit score data using a dynamic Donut View. Built with Jetpack Compose, Ktor, Koin, and Coroutines for Android and iOS
+# CSTask - Credit Score App
+
+CSTask is a multiplatform mobile application built with Compose Multiplatform Mobile (CMP) that fetches and displays credit score information from the CS API. This project demonstrates the use of Clean Architecture, Compose Multiplatform, Koin, Ktor, Kotlin Coroutines, and Flow to create a well-structured, testable, and reactive application.
+
+## Features
+
+*   Fetches credit score data from the CS API.
+*   Displays credit score information in a user-friendly format.
+*   Handles loading, success, and error states gracefully.
+*   Uses Clean Architecture for a well-organized codebase.
+*   Built with Kotlin Multiplatform Mobile (KMM) for code sharing across platforms.
+*   Utilizes Jetpack Compose for a modern declarative UI.
+*   Employs Koin for dependency injection.
+*   Uses Ktor for network requests.
+*   Leverages Kotlin Coroutines and Flow for asynchronous and reactive programming.
+*   Includes unit tests for the `HomeViewModel`.
+
+
+
+## Architecture
+
+The CSTask app follows the principles of Clean Architecture, which divides the application into distinct layers:
+
+*   **Domain Layer:**
+    *   Contains core business logic and entities.
+    *   Defines the `CreditInfo`, `CreditReportInfo`, and `RequestState` data models.
+    *   Includes the `CreditInfoRepository` interface, which defines the contract for fetching credit information.
+*   **Data Layer:**
+    *   Handles data access and communication with external sources.
+    *   Includes the `ClearScoreApiService` interface and its implementation (`ClearScoreApiServiceImpl`) for network requests.
+    *   Implements the `CreditInfoRepository` interface (`CreditInfoRepositoryImpl`).
+*   **Presentation Layer:**
+    *   Contains the UI and UI-related logic.
+    *   Includes the `HomeScreen` (Jetpack Compose UI) and the `HomeViewModel`.
+    *   The `HomeViewModel` interacts with the `CreditInfoRepository` to fetch and manage credit information.
+
+## Technical Decisions
+
+*   **Clean Architecture:** The decision to use Clean Architecture was made to ensure a clear separation of concerns, making the code more maintainable, testable, and scalable.
+*   **Repository Pattern:** The repository pattern was chosen to abstract data access, allowing for easy switching of data sources and mocking for testing.
+*   **Koin for Dependency Injection:** Koin was selected for its simplicity and lightweight nature, making it a good fit for KMM projects.
+*   **Ktor for Networking:** Ktor was chosen for its multiplatform support and its ability to handle asynchronous network requests efficiently.
+*   **Kotlin Coroutines and Flow:** These were chosen for their ability to handle asynchronous operations and reactive data streams in a concise and readable way.
+*   **JUnit** chosen for unit testing.
+
+## Installation & Setup
+
+* Android Studio Giraffe+
+* Xcode (for iOS development)
+* Kotlin Multiplatform plugin
+
+## Screenshots
