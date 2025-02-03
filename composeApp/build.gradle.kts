@@ -1,11 +1,9 @@
-@file:OptIn(ExperimentalComposeLibrary::class)
-
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.kotlin
-import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.time.Duration
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -19,7 +17,7 @@ kotlin {
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
     
@@ -78,6 +76,7 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
             implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.cio)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -109,8 +108,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
@@ -121,11 +120,30 @@ dependencies {
 compose.desktop {
     application {
         mainClass = "com.ruchabhattjoshi.cstask.MainKt"
+        jvmArgs += listOf("-Xmx2G")
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.ruchabhattjoshi.cstask"
             packageVersion = "1.0.0"
+
+            windows {
+                menuGroup = "Compose Examples"
+                upgradeUuid = "18159995-d967-4CD2-8885-77BFA97CFA9F"
+            }
         }
     }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    timeout.set(Duration.ofMinutes(30))
+}
+
+tasks.withType<JavaCompile> {
+    options.forkOptions.jvmArgs = listOf("-Xmx4g")
+}
+
+tasks.withType<Test> {
+    timeout.set(Duration.ofMinutes(30))
+    maxHeapSize = "2g"
 }

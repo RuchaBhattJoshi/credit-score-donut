@@ -135,7 +135,7 @@ fun ClearScoreRefresh(error: String, onRefreshClicked: () -> Unit) {
                 text = error,
                 color = MaterialTheme.colorScheme.onBackground,
                 style = MaterialTheme.typography.bodySmall,
-                textAlign = TextAlign.Start
+                textAlign = TextAlign.Center
             )
             Button(
                 modifier = Modifier.padding(10.dp),
