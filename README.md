@@ -58,6 +58,20 @@ iOS:
 
 <img width="347" alt="Image" src="https://github.com/user-attachments/assets/e2606a12-41a3-4a60-9a58-bdb9babe357a" />
 
+## Libraries 
+
+• Koin: Dependency Injection (DI) framework for Kotlin.
+
+• Ktor: Multiplatform asynchronous HTTP client and server framework.
+
+• Voyager: Navigation library for Jetpack Compose.
+
+• Kotlinx Serialization: Kotlinx Serialization is a powerful, multiplatform, and multi-format serialization library for Kotlin.
+
+• Kotlinx DateTime: Kotlinx DateTime is a multiplatform library for working with dates, times, and time zones in Kotlin
+
+• Stately: Multiplatform state management library.
+
 
 ## What I could achieve with time:
 
