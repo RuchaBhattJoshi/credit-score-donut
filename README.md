@@ -72,11 +72,3 @@ iOS:
 
 • Stately: Multiplatform state management library.
 
-
-## What I could achieve with time:
-
-• Add effective Unit/UI Testing.
-
-• Desktop support + Testcases
-
-• Local database 
