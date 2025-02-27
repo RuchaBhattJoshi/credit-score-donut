@@ -1,6 +1,6 @@
-# CSTask - Credit Score App
+# credit-score-donut 
 
-CSTask is a multiplatform mobile application built with Compose Multiplatform Mobile (CMP) that fetches and displays credit score information from the CS API. This project demonstrates the use of Clean Architecture, Compose Multiplatform, Koin, Ktor, Kotlin Coroutines, and Flow to create a well-structured, testable, and reactive application.
+credit-score-donut is a multiplatform mobile application built with Compose Multiplatform Mobile (CMP) that fetches and displays credit score information from the CS API. This project demonstrates the use of Clean Architecture, Compose Multiplatform, Koin, Ktor, Kotlin Coroutines, and Flow to create a well-structured, testable, and reactive application.
 
 ## Features
 
@@ -18,7 +18,7 @@ CSTask is a multiplatform mobile application built with Compose Multiplatform Mo
 
 ## Architecture
 
-The CSTask app follows the principles of Clean Architecture, which divides the application into distinct layers:
+credit-score-donut follows the principles of Clean Architecture, which divides the application into distinct layers:
 
 *   **Domain Layer:**
     *   Contains core business logic and entities.
